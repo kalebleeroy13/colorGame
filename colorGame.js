@@ -24,7 +24,7 @@ for(let i = 0; i < squares.length; i++){
     let clickedColor = this.style.backgroundColor;
     // compare color to pickedColor
     if(clickedColor === pickedColor){
-      alert("Correct!");
+    messageDisplay.textContent = "Correct!";
     } else {
       this.style.backgroundColor = "#232323";
       messageDisplay.textContent ="Try Again"
