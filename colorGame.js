@@ -15,5 +15,10 @@ colorDisplay.textContent = pickedColor;
 
 
 for(let i = 0; i < squares.length; i++){
+  //add intial colors to squares
   squares[i].style.backgroundColor = colors[i];
+// add click listeners to squares
+  squares[i].addEventListener("click", function() {
+    alert("clicked a square");
+  });
 }
