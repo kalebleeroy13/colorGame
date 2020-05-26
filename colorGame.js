@@ -6,6 +6,21 @@ let colorDisplay = document.getElementById("colorDisplay");
 let messageDisplay = document.querySelector("#message")
 let h1 = document.querySelector("h1");
 let resetButton = document.querySelector("#reset");
+let easyBtn = document.querySelector("#easyBtn");
+let hardBtn = document.querySelector("#hardBtn");
+
+easyBtn.addEventListener("click", function(){
+  hardBtn.classList.remove("selected");
+  easyBtn.classList.add("selected");
+  colors = generateRandomColors(3);
+  pickedColor = pickColor();
+  colorDisplay.textContent = pickedColor;
+})
+
+hardBtn.addEventListener("click", function(){
+  easyBtn.classList.remove("selected");
+  hardBtn.classList.add("selected");
+})
 
 resetButton.addEventListener("click", function(){
   // generate all new Colors
