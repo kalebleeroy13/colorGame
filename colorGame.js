@@ -12,7 +12,8 @@ let hardBtn = document.querySelector("#hardBtn");
 easyBtn.addEventListener("click", function(){
   hardBtn.classList.remove("selected");
   easyBtn.classList.add("selected");
-  colors = generateRandomColors(3);
+  numSquares = 3;
+  colors = generateRandomColors(numSquares);
   pickedColor = pickColor();
   colorDisplay.textContent = pickedColor;
   for(let i = 0; i < squares.length; i++){
@@ -27,7 +28,8 @@ easyBtn.addEventListener("click", function(){
 hardBtn.addEventListener("click", function(){
   hardBtn.classList.add("selected");
   easyBtn.classList.remove("selected");
-  colors = generateRandomColors(6);
+  numSquares = 6;
+  colors = generateRandomColors(numSquares);
   pickedColor = pickColor();
   colorDisplay.textContent = pickedColor;
   for(let i = 0; i < squares.length; i++){
@@ -38,7 +40,7 @@ hardBtn.addEventListener("click", function(){
 
 resetButton.addEventListener("click", function(){
   // generate all new Colors
-  colors = generateRandomColors(6)
+  colors = generateRandomColors(numSquares);
   // pick a new random color from array
   pickedColor = pickColor();
   // change colorDisplay to match picked Color
