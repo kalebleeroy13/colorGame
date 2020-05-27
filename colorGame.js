@@ -13,29 +13,13 @@ init();
 
 function init(){
   // modeButtons EventListener
-  for(let i = 0; i < modeButtons.length; i++){
-    modeButtons[i].addEventListener("click", function(){
-      modeButtons[0].classList.remove("selected");
-      modeButtons[1].classList.remove("selected");
-      this.classList.add("selected");
-      this.textContent === "Easy" ? numSquares = 3: numSquares = 6;
-      // long version of tenry operator
-      // if(this.textContent === "Easy"){
-      //   numSquares = 3;
-      // } else {
-      //   numSquares = 6;
-      // }
-      reset();
-    });
-  }
-
+  setupModeButtons();
   for(let i = 0; i < squares.length; i++){
     // add click listeners to squares
     squares[i].addEventListener("click", function(){
       // grab color of clicked square
-      let clickdColor = this.style.backgroundColor;
+      let clickedColor = this.style.backgroundColor;
       // compare color to pickedColor
-      console.log(clickedColor, pickedColor);
       if(clickedColor === pickedColor){
         messageDisplay.textContent = "Correct!";
         resetButton.textContent = "Play Again?"
@@ -51,8 +35,23 @@ function init(){
   reset();
 }
 
-
-
+function setupModeButtons(){
+  for(let i = 0; i < modeButtons.length; i++){
+    modeButtons[i].addEventListener("click", function(){
+      modeButtons[0].classList.remove("selected");
+      modeButtons[1].classList.remove("selected");
+      this.classList.add("selected");
+      this.textContent === "Easy" ? numSquares = 3: numSquares = 6;
+      // long version of tenry operator
+      // if(this.textContent === "Easy"){
+      //   numSquares = 3;
+      // } else {
+      //   numSquares = 6;
+      // }
+      reset();
+    });
+  }
+}
 
 
 function reset(){
@@ -79,8 +78,6 @@ function reset(){
 resetButton.addEventListener("click", function(){
   reset();
   });
-
-  colorDisplay.textContent = pickedColor;
 
 
 
